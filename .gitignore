@@ -1,0 +1,14 @@
+/.idea
+/.vscode
+
+# Rust
+/target
+
+# FFMPEG
+avcodec*
+avdevice*
+avfilter*
+avformat*
+avutil*
+swresample*
+swscale*
