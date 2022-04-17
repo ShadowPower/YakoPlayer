@@ -1,5 +1,3 @@
-#![windows_subsystem = "windows"]
-
 use std::{sync::{atomic::{AtomicBool, Ordering}, Arc, Mutex}, cell::Cell};
 
 use cpal::{Device, Stream, SampleFormat, traits::{HostTrait, DeviceTrait, StreamTrait}, Sample};
@@ -13,7 +11,7 @@ pub static BUFFER_CAPACITY: usize = 64_000;
 #[derive(Debug, Snafu)]
 pub enum Error {
     #[snafu(display("failed to init audio device: {}", message))]
-    InitDevice { 
+    InitDevice {
         message: String,
     },
 
