@@ -34,9 +34,19 @@ impl AudioSample {
         audio_sample
     }
 
+    pub fn apply_frame_processor(&self, processor: impl Fn(u8, &mut [f32])) -> Self {
+        let mut audio_sample = self.clone();
+        processor(audio_sample.channels, &mut audio_sample.data);
+        audio_sample
+    }
+
     /// 获取音频样本的声道数
     pub fn channels(&self) -> usize {
         self.channels as usize
+    }
+
+    pub fn get_sample(&self, channel: usize) -> f32 {
+        self.data[channel]
     }
 
     pub fn ch1(&self) -> f32 {
