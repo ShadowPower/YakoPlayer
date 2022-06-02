@@ -17,9 +17,19 @@ ringbuf = "0.2.8"
 snafu = "0.7.0"
 libc = "0.2.122"
 ffi_helpers = "0.3.0"
+# GUI
+iced_glow = "0.3.0"
+iced = { version = "0.4.2", features = ["tokio", "glow"] }
+rfd = "0.8.1"
 
 [target.'cfg(windows)'.dependencies]
 widestring = "0.5.1"
 
 [lib]
-crate-type = ["cdylib"]
+name = "player_core"
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[[bin]]
+name = "player"
+path = "src/main.rs"

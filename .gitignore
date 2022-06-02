@@ -10,5 +10,6 @@ avdevice*
 avfilter*
 avformat*
 avutil*
+ffmpeg*
 swresample*
 swscale*
